@@ -157,7 +157,7 @@
     width: 100%;
     height: auto;
     color: var(--branco);
-    background: var(--azul);
+    background-image: url(eu3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
