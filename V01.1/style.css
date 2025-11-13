@@ -1,0 +1,174 @@
+/* Reseta estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('E-D_fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+    color: white; /* Cor do texto padrão para contraste */
+    padding-top: 60px; /* Adiciona um espaçamento no topo do corpo para não ficar atrás do header fixo */
+}
+
+/* Estilos para o cabeçalho e navegação */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed; /* Fixa o header no topo */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block; /* Coloca os itens em linha */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Estilo para o link ativo da seção atual */
+nav ul li a.active {
+    color: #ffa500; /* Uma cor de destaque */
+    font-weight: bold;
+}
+
+/* Estilos básicos para as seções para garantir que tenham altura */
+section {
+    height: 100vh; /* Faz cada seção ocupar a altura da tela */
+    padding: 20px;
+    scroll-margin-top: 40px; /* Garante que o título da seção não fique atrás do header fixo ao navegar */
+}
+
+/* Seção principal */
+main {
+    padding: 2rem;
+}
+
+section {
+    margin: 2rem 0;
+    border-bottom: 1px solid #444; /* Borda sutil entre seções */
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    background: #ffa500;
+    color: #030000;
+    border: none;
+    border-radius: 20%;
+    display: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Contêiner para o logo */
+.logo-container {
+  position: relative; /* Necessário para posicionar o brilho sobre a imagem */
+  display: inline-block; /* Faz o contêiner ter o tamanho da imagem */
+  overflow: hidden; /* Esconde o brilho fora da área da imagem */
+  border-radius: 8px; /* Opcional: para arredondar as bordas como na imagem */
+}
+
+/* Pseudo-elemento que cria o efeito de brilho */
+.logo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Começa fora da imagem, à esquerda */
+  width: 20%; /* Largura do brilho */
+  height: 100%; /* Altura do brilho */
+  
+  /* Cria uma faixa de brilho vertical que se moverá na horizontal */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  
+  /* Aplica a animação 'shine' */
+  /* Duração total: 2s para o brilho + 30s de pausa = 32s */
+  animation: shine 32s infinite alternate; /* 'alternate' faz a animação ir e voltar */
+}
+
+/* Animação do brilho */
+@keyframes shine {
+  /* A animação do brilho ocorre nos primeiros 6% do tempo (aprox. 2 segundos) */
+  6% {
+    left: 120%; /* Posição final (fora, à direita) */
+  }
+}
+
+
+/* Estilos para a seção Home */
+#home {
+    display: flex;/* Usa Flexbox para centralizar o conteúdo */
+    flex-direction: column;/* Alinha os itens em coluna */
+    justify-content: center;/* Centraliza verticalmente */
+    align-items: center;/* Centraliza horizontalmente */
+    height: 100vh; /* Ocupa a altura total da viewport */
+    text-align: center;/* Centraliza o texto */
+}
+
+/* Estilos para a imagem dentro da seção Home */
+#home img {
+    display: block; /* Garante que a imagem seja visível */
+    margin-top: 02px; /* Espaçamento abaixo do título "Bem-vindo!" */
+    margin-bottom: 05px; /* Espaçamento acima do parágrafo */
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    max-width: 400px; /* Define um tamanho máximo para a imagem */
+    border: 3px solid #ffa500; /* Adiciona a moldura laranja */
+    border-radius: 15px; /* Arredonda os cantos da moldura */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para a imagem */
+    padding: 10px; /* Espaçamento interno */
+}
+
+#contact img {
+    display: block; /* Garante que a imagem seja visível */
+    margin-top: 2px; /* Espaçamento abaixo do título "Bem-vindo!" */
+    margin-bottom: 05px; /* Espaçamento acima do parágrafo */
+    max-width: 250px; /* Define um tamanho máximo para a imagem */
+    border: 3px solid #ffa500; /* Adiciona a moldura laranja */
+    border-radius: 15px; /* Arredonda os cantos da moldura */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para a imagem */
+    padding: 10px; /* Espaçamento interno */
+}
+
+/* Estilos para a seção Contact */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+}
+
+/* Centraliza o container do logo na seção de contato */
+#contact .logo-container {
+    align-self: center;
+}
+/*cor da fonte do link da section*/
+section a {
+    color: #ffa500; /* Cor laranja para link */
+    font-weight: bold;
+}
